@@ -99,7 +99,7 @@ class Scraper:
             frame.append(csvRow)
 
         df = pd.DataFrame(frame)
-        df.to_csv(f'{select_year}-{select_month}-{select_day}',index=False,encoding='utf_8_sig')
+        df.to_csv(f'{select_year}-{select_month}-{select_day}.csv',index=False,encoding='utf_8_sig')
 
         # ウィンドウ削除
         self.driver.close()
@@ -108,8 +108,8 @@ class Scraper:
 
 sc = Scraper()
 
-d1 = datetime.datetime(2000,5,2)
-d2 = datetime.datetime(2010,12,1)
+d1 = datetime.datetime(2023,1,1)
+d2 = datetime.datetime(2023,10,17)
 diff = d2 - d1
 
 for i in range(diff.days):
